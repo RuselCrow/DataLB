@@ -5,600 +5,124 @@
 
 
 
-
 html body{
+  background-color: white;
+  font-family: "Roboto Regular";
+}
+header{
   background-color: @headerBgColor;
-}
-.main-screen{
-  .blicker-big{
-    top: 200px;
-    left: 530px;
+  .container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-  .blicker-small{
-  bottom: 200px;
-  right: 45%;
+  h1{
+    color: white;
+    text-align: center;
+    font-size: @headerFS;
   }
-}
-.services-block{
-  .blicker-big_gr{
-    bottom: 150px;
-    left: 29%;
-  }
-  .blicker-small{
-    top: 200px;
-    left: 55%;
+  .ball{
+    margin-top: 5px;
   }
 }
-.blicker-big{
-  .responsiveMax(768px,{display: none;});
+
+.black-overlay{
   position: absolute;
-  .bubble-blick(100px,@servicesBg,0.3,4s,0s);
-}
-.blicker-big_gr{
-  position: absolute;
-  .bubble-blick(100px,#376c6f,0.9,4s,0s);
-}
-.blicker-small{
-  position: absolute;
-  .bubble-blick(40px,@buttonBgColor2,0.22,4s,0.5s);
-}
-.headerAndDescription(){
-  .m-text-side{
-    h1{
-      //.textStyleH1();
-      font-family: "Roboto Bold";
-      .responsiveMin(931px,{font-size: 70px;});
-      color: @mainTextColor;
-
-      max-width: 600px;
-      margin-bottom: 20px;
-      margin-top: 0px;
-    }
-    p{
-      //.textStyle2();
-      font-family: "Roboto Regular";
-      .responsiveMin(931px,{font-size: 20px; margin-bottom: 30px;});
-      color: @mainTextColor;
-
-      max-width: 600px;
-    }
-  }
-}
-.headerAndDescription2(){
-  .m-text-side{
-    h2{
-      //.textStyleMainH2();
-      font-family: "Roboto Bold";
-      .responsiveMin(931px,{font-size: 52px;});
-      color: @projectTextColor;
-
-      max-width: 600px;
-      margin-bottom: 20px;
-      margin-top: 0px;
-      color: white;
-    }
-    p{
-      //.textStyle2();
-      font-family: "Roboto Regular";
-      .responsiveMin(931px,{font-size: 20px; margin-bottom: 30px;});
-      color: @mainTextColor;
-
-      max-width: 600px;
-      color: white;
-    }
-  }
-}
-.headerAndDescription3(){
-  .m-text-side{
-    position: relative;
-    h2{
-      font-family: "Roboto Bold";
-      .responsiveMin(931px,{font-size: 52px;});
-      color: @projectTextColor;
-      margin-bottom: 20px;
-      margin-top: 0px;
-    }
-    p{
-      //.textStyle2();
-      font-family: "Roboto Regular";
-      .responsiveMin(931px,{font-size: 20px; margin-bottom: 40px;});
-      color: @mainTextColor;
-
-      color: @projectTextColor;
-      margin-bottom: 30px;
-    }
-  }
-}
-
-@curve-radius:300px;
-@curve-color1:white;
-@curve-color2:@servicesBg;
-.curve-container(){
-  overflow: hidden;
-  width: @curve-radius*2;
-  height: @curve-radius*2;
-  position: absolute;
-}
-.curve(){
-  top: -1px;
-  position: absolute;
-  width: (@curve-radius*2)+5px;
-  height: (@curve-radius*2)+5px;
-}
-.top-curve{
-  .curve-container();
-  background: @curve-color1;
-  top: -1px;
-  right: 0;
-  .curve-maker{
-    .curve();
-    right: 0;
-    background-color: @curve-color2;
-    border-top-right-radius: @curve-radius;
-  }
-}
-.bottom-curve{
-  .curve-container();
-  background: @curve-color2;
-  bottom: -1px;
-  left: 0;
-  max-width: 100%;
-  .curve-maker{
-    .curve();
-    left: 0px;
-    background-color: @curve-color1;
-    border-bottom-left-radius: @curve-radius;
-  }
-}
-.responsiveMax(425px,{
-  .bottom-curve .curve-maker{
-    border-bottom-left-radius: @curve-radius*0.35;
-  }
-  .top-curve .curve-maker{
-    border-top-right-radius: @curve-radius*0.35;
-  }
-});
-.responsive(426px,768px,{
-  .bottom-curve .curve-maker{
-    border-bottom-left-radius: @curve-radius*0.5;
-  }
-  .top-curve .curve-maker{
-    border-top-right-radius: @curve-radius*0.5;
-  }
-});
-.responsive(768px,1024px,{
-  .bottom-curve .curve-maker{
-    border-bottom-left-radius: @curve-radius*0.75;
-  }
-  .top-curve .curve-maker{
-    border-top-right-radius: @curve-radius*0.75;
-  }
-});
-
-.block-addon(@radius,@color,@totop){
-  .block-addon-constructor(@radius,@color);
-  & when (@totop = true) {
-    top: -@radius/2;
-    border-bottom-right-radius: @radius;
-    border-bottom-left-radius: @radius;
-  }
-  & when (@totop = none) {
-    bottom: -@radius/2;
-    border-top-right-radius: @radius;
-    border-top-left-radius: @radius;
-  }
-}
-.block-addon-constructor(@radius,@color){
-margin-left: calc(50vw ~"-" @radius/2);
-position: absolute;
-width: @radius;
-height: @radius;
-background-color: @color;
-}
-.block-addon__center{
-  .responsiveMax(425px,{
-    &.not-mobile{display: none;}
-    &.mobile{display: block;}
-  });
-  .responsiveMin(426px,{
-    &.not-mobile{display: block;}
-    &.mobile{display: none;}
-  });
-}
-.tech-round-thing__black{
-.block-addon(20px, @headerBgColor, true);
-}
-
-
-.main-screen{
-  overflow: hidden;
-  background-color: @headerBgColor;
   width: 100%;
-  height: calc(100vh ~'-' 78px);
-  .headerAndDescription();
-  .main-screen-buttons{
-    margin-top: 50px;
-  }
-  .m-text-side{
-    height: 414px;
-    float: left;
-    top: 40vh;
+  height: 178vh;
+  background: @overlayColor;
+  top: 54px;
+}
+.arenda-block__top-text{
+  position: relative;
+}
+.arenda-block{
+  margin: 20px 0;
+  position: relative;
+  margin-left: 22px;
+  margin-right: 22px;
+  height: 170px;
+  border-radius: @blockRadius;
+  background-color: black;
+  overflow: hidden;
+  .white-overlay{
     position: absolute;
-    margin-top: -207px;
-  }
-  .m-code-side{
-    float: right;
-    //margin-top: 120px;
-    //margin-right: 85px;
-    margin-top: 192px;
-    margin-right: 200px;
-    transform: scale(2);
-  }
-
-  // for button
-  .m-text-side button p {
-    color: @projectTextColor;
-  }
-}
-
-
-.project-block{
-  .project-container{
-    position: relative;
-    height: 100%;
-  }
-  height: 2150px;
-  .headerAndDescription2();
-  background-color: white;
-  .projectPlate{
-    z-index: 3;
-  }
-  .project-content{
-    .default-container{
-      position: absolute;
-      margin-top: -180px;
-
-      .responsiveMin(1280px, {
-        margin-left: ~"calc(50vw - 590px)";
-      });
-    }
-
-  }
-}
-
-
-
-
-.services-block{
-  position: relative;
-  background: @servicesBg;
-  padding-top: 100px;
-  .headerAndDescription3();
-  
-  .services-container{
-    display: flex;
-    flex-wrap: wrap;
-    .responsiveMin(1280px, {
-      justify-content: space-between;
-    });
-  }
-}
-.particles1{
-  position: relative;
-  .m-text-side{
-    z-index: 2;
-  }
-  .servicePlate{
-    z-index: 2;
-  }
-}
-.callback{
-  position: relative;
-  .m-text-side{
-    z-index: 2;
-  }
-  .callback-form{z-index: 2;}
-  .form-info_element{z-index: 2;}
-  .send-button{
-    z-index: 2;
-  }
-
-}
-#particles1{
-  z-index: 1;
-  opacity:0.15;
-}
-.particlesBg {
-  position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
-    z-index: 0;
-    opacity: 0.5;
-}
-
-.tech-block{
-  position: relative;
-  padding-top: 55px;
-  display: block;
-  height: 210px;
-  .tech-images{
-    display: flex;
-    justify-content: space-between;
-    .img-container{
-      width: 100px;
-      height: 100px;
-      position: relative;
-      img{
-        width: 100%;
-        display: inline-block;
-        vertical-align: middle;
-        position: absolute;
-        margin-top: auto;
-        margin-bottom: auto;
-        top: 0;
-        bottom: 0;
-      }
-    }
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: @blockOverlay;
   }
-  //@roundWidth:20px;
-  .tech-round-thing{
-    .block-addon(20px,@servicesBg,true);
-    // top: -@roundWidth/2;
-    // margin-left: calc(50vw ~"-" @roundWidth);
-    // position: absolute;
-    // width: @roundWidth;
-    // height: @roundWidth;
-    // background-color: @servicesBg;
-    // border-bottom-right-radius: 20px;
-    // border-bottom-left-radius: 20px;
+  &:nth-child(2){
+    background: url("../../components/images/index/block2.jpg") center center;
   }
-}
-
-.vacancy-block{
-  position: relative;
-  background: white;
-  padding-top: 100px;
-  .headerAndDescription3();
-  .vacancy-container{
-    display: flex;
-    flex-wrap: wrap;
-    .responsiveMin(1280px, {
-      justify-content: space-between;
-    });
+  //background: center;
+  &:nth-child(3) {
+    background: url("../../components/images/index/block1.jpg") center center;
   }
-  
-}
-
-.callback{
-  margin-top: -1px;
-  position: relative;
-  height: 600px;
-  padding-top: 100px;
-  background-color: white;
-  .headerAndDescription3();
-  .form-info{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  &:nth-child(4){
+    background: url("../../components/images/index/block3.jpg") center center;
   }
-  .form-info_element{
-    margin-bottom: 65px;
-    position: relative;
-    margin-top: 20px;
-    label{
-      pointer-events: none;
-      color: @projectTextColor;
-      font-family: "Roboto Regular";
-      transition: top 0.5s, font-size 0.5s, color 0.5s;
-      position: absolute;
-      top: -4px;
-    }
-    
-    input:focus + label{
-      top: -20px;
-      font-size: 12px;
-      color: #777;
-    }
-    input:valid + label{
-      top: -20px;
-      font-size: 12px;
-      color: #777;
-    }
-
-    input{
-      position: absolute;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      border-bottom: 2px solid #a0a2a9;
-      width: 100%;
-      outline: none;
-      &::selection{
-        outline: none;
-      }
-    }
-    &:not(:last-of-type){
-      width: 32%; 
-    }
-    &:last-of-type{
-      width: 100%;
-    }
-
-  }
-  .aprove-check{
-    margin-left: 245px;
-    padding-top: 13px;
-
-    .container-ch {
-      width: auto;
-      display: block;
-      position: relative;
-      padding-left: 35px;
-      margin-bottom: 12px;
-      cursor: pointer;
-      //font-size: 22px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-    
-    /* Hide the browser's default checkbox */
-    .container-ch input {
-      top:0;
-      left: 0;
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      width: 20px;
-      height: 20px;
-      z-index: 3;
-    }
-    
-    /* Create a custom checkbox */
-    .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 20px;
-        width: 20px;
-        background-color: white;
-        border: 2px solid @projectTextColor;
-    }
-    
-    
-    /* When the checkbox is checked, add a blue background */
-    .container-ch input:checked ~ .checkmark {
-        background-color: white;
-    }
-    
-    /* Create the checkmark/indicator (hidden when not checked) */
-    .checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-    }
-    
-    /* Show the checkmark when checked */
-    .container-ch input:checked ~ .checkmark:after {
-        display: block;
-    }
-    
-    /* Style the checkmark/indicator */
-    .container-ch .checkmark:after {
-        left: 4px;
-        top: 2px;
-        width: 9px;
-        height: 9px;
-        border: solid black;
-        border-width: 0 3px 3px 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-
-  }
-}
-.tech-round-thing__reverce__black{
-  .block-addon(20px, @headerBgColor, none);
-}
-footer{
-  .default-container{
-    overflow: auto;
-  }
-  a{
-    font-family: "Roboto Regular";
-  }
-  .footer-top{
-    height: 250px;
-    padding-top: 110px;
-    background-color: @headerBgColor;
-    .links-container{
-      a{
-        font-size: 24px;
-        color: white;
-      }
-    }
-    .phone-link{
-      margin-right: 150px;
-      text-decoration: unset;
-      &:hover{
-        text-decoration: underline;
-      }
-    }
-    
-    .mail-link{
-      text-decoration: underline;
-      &:hover{
-        text-decoration: unset;
-      }
-    }
-  }
-  .footer-bottom{
-    position: relative;
-    background-color: @buttonBgColor1;
-    height: 75px;
-    padding: 16px 0;
-    .soc-icons{
-      float: right;
-      width: 110px;
-      display: flex;
-      justify-content: space-between;
-      a{
-        position: relative;
-        width: 28px;
-        img{
-          opacity: 1;
-          top: 0px;
-          transition: top 0.5s, opacity 0.5s;
-          width: 100%;
-          &:hover{
-            opacity: 0.5;
-            position: absolute;
-            top: -3px;
-          }
-        }
-      }
-      
-    }
-    .footer-nav{
-      height: 48px;
-      padding-top: 8px;
-    }
-    .nav-links{
-      float: right;
-      margin-top: 3px;
-      a{
-        overflow: hidden;
-        position: relative;
-        margin-right: 30px;
-        color: @projectTextColor;
-        position: relative;
-        padding-bottom: 2px;
-        &:hover{
-          span{
-            width: 100%;
-          }
-        }
-        span{
-          max-width: 60px;
-          transition: width 0.3s;
-          position: absolute;
-          height: 2px;
-          width: 0;
-          border-bottom: 1px solid @projectTextColor;
-          bottom: 0;
-          left: 0;
-        }
-      }
-    }
-  }
-  .copyright{
+  .name{
+    color: white;
     float: left;
+    font-size: @blockNameSize;
+    margin: 15px 10px;
   }
-  .footer-nav{
+  .price{
     float: right;
+    color: white;
+    background-color: @priceColor;
+    padding: 3px 5px;
+    border-radius: 15px;
+    margin: 15px 10px;
+    p{
+      font-size: @blockPriceS;
+      font-family: "Roboto Bold";
+      margin: 0;
+    }
+  }
+  .arenda-block__info{
+    position: absolute;
+    bottom: 20px;
+    left:calc(50vw ~"-" 130px);
+    .info{
+      color: white;
+      font-size: @blockTextS;
+      text-align: center;
+    }
+    
   }
 }
-@import "./phones";
+.info-content{
+  padding: 30px 13px;
+  font-size: 15px;
+  margin: 20px 0;
+  position: relative;
+  margin-left: 22px;
+  margin-right: 22px;
+  border-radius: @blockRadius;
+  background-color: white;
+  button{
+    margin: 0 auto;
+    width: 220px;
+    display: block;
+  }
+}
+
+.main-content{
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background: url("../../components/images/index/photo.jpg") center center fixed;
+  button{
+    color: white;
+    font-size: @buttonTextSize;
+    padding: 3px 20px;
+    background-color: @buttonColor;
+    border: none;
+    border-radius: 15px;
+    span{
+      margin-left: 40px;
+    }
+  }
+}
