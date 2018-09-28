@@ -1,0 +1,87 @@
+extends ../base.pug
+include ../../components/UI/uiMixins.pug
+include ../../components/UI/currLocation.pug
+block title
+    |  - Доставка
+block main
+    .delivery
+        .delivery_content
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +currentLocation('Новости')
+                        h1 Доставка
+                        h1.text_red Доставка по москве и МО
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +deliveryPlate(require('../../components/header/pickup.png'),
+                        "Самовывоз:","Стоимость: бесплатно",
+                        "1) Из пункта самовывоза по адресу: 125599, Москва, Ижорская, д. 6 (карта)",
+                        "Внимание: заказы для отгрузки самовывозом на следующий рабочий день оформляются до 16:00. Заказы, принятые после 16:00 текущего дня, будут готовы к самовывозу через 1 рабочий день.")
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +deliveryPlate(require('../../components/header/courier.png'),
+                        "Курьерская доставка в пределах МКАД:",
+                        "Стоимость: 300 рублей.",
+                        "Курьерская доставка доступна только для заказов общей суммой от 2000 рублей.",
+                        "Курьерская доставка по Московской области:")
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +deliveryPlate(require('../../components/header/courier.png'),
+                        "Курьерская доставка по Московской области:",
+                        "Стоимость: +25 руб./км к стандартной стоимости",
+                        "Внимание: в случае доставки крупногабаритных товаров стоимость доставки рассчитывается персонально менеджером  в каждом конкретном случае.")
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        h1 Доставка по России
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +deliveryPlate(require('../../components/header/transport.png'),
+                        "Доставка транспортными кампаниями:",
+                        "Стоимость: зависит от города назначения, а так же от габаритов и веса вашего заказа",
+                        "Для того, чтобы рассчитать стоимость доставки транспортной компанией, вам понадобится суммарный объём и вес вашего заказа. Вы можете рассчитать его самостоятельно, воспользовавшись информацией от производителя, либо запросить расчёт у наших менеджеров.",
+                        "Мы готовы доставить ваш заказ в любой город России любой удобной вам транспортной компанией. ")
+            .container.company_line
+                .row
+                    .col-md-3
+                    .col-md-4
+                        img(src=require('../../components/images/companies/linescom.png'))
+                    .col-md-1
+                    .col-md-4
+                        a.text_red Рассчитать стоимость
+                        a.text_red Отследить заказ
+            .container.company_line
+                .row
+                    .col-md-3
+                    .col-md-4
+                        img(src=require('../../components/images/companies/pec.png'))
+                    .col-md-1
+                    .col-md-4
+                        a.text_red Рассчитать стоимость
+                        a.text_red Отследить заказ
+            .container.company_line
+                .row
+                    .col-md-3
+                    .col-md-4
+                        img(src=require('../../components/images/companies/baikal.png'))
+                    .col-md-1
+                    .col-md-4
+                        a.text_red Рассчитать стоимость
+                        a.text_red Отследить заказ
+            .container.company_line
+                .row
+                    .col-md-3
+                    .col-md-3
+                        .red_button.actions_button
+                            a Запросить счет

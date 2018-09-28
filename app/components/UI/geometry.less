@@ -1,0 +1,41 @@
+.square{
+  width: 7px;
+  height: 7px;
+  background-color: #d0d0d0;
+}
+.active .square,.active .rectangle{
+  background-color: #ff4b3a;
+}
+
+.rectangle{
+  width: 20px;
+  height: 3px;
+  background-color: #d0d0d0;
+}
+.linear{
+
+  display: inline-block;
+  position: relative;
+  .rectangle{
+    margin-bottom: 4px;
+  }
+}
+.square_toggler{
+  display: inline-block;
+  position: relative;
+  width: 18px;
+
+  .square{
+    display: inline-block;
+  }
+  .square:last-child{
+    position: absolute;
+    margin-top: -2px;
+    margin-left: 10px;
+  }
+  .square:nth-child(3){
+    position: absolute;
+    margin-top: -2px;
+    margin-left: 0px;
+  }
+}

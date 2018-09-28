@@ -1,0 +1,71 @@
+mixin newsPlate(img_link,news_title,news_date,link)
+    .news_plate
+        img(src=img_link)
+        .news_title
+            a(href=link)=news_title
+        .news_data
+            p=news_date
+
+mixin productPlate(img_url,category_txt,title_txt,stars,price_txt)
+    .product_plate
+        .product_img
+            img(src=img_url)
+        .product_texts
+            p=category_txt
+            h2=title_txt
+
+            .product_stars
+                - var starLink=[];
+                - for (var idx=0; idx<5;idx++)
+                - if (idx<stars)
+                - starLink[idx]=require('../../components/images/star-little.png');
+                - else starLink[idx]=require('../../components/images/star-hollow.png');
+                each item in starLink
+                    img(src=item)
+            .price_text
+                p=price_txt
+                    span  руб.
+            .buy_button
+                a(href="#") в корзину
+
+mixin product_plate_long(img_src,title_txt,art_txt,stars,isAvailable,price)
+    .product_plate_long
+        .img_container
+            img(src=img_src,)
+        .txt_container
+            h2=title_txt
+            p.artic=art_txt
+            .product_stars
+                - var starLink=[];
+                - for (var idx=0; idx<5;idx++)
+                - if (idx<stars)
+                - starLink[idx]=require('../../components/images/star-little.png');
+                - else starLink[idx]=require('../../components/images/star-hollow.png');
+                each item in starLink
+                    img(src=item)
+            if isAvailable
+                p.available В наличии
+            else
+                p.unavailable Под заказ
+            .charact.down Характеристики
+            .product_description.invisible
+                p Мощность.............................................................79кВт
+                p Длина шины........................................................250 мм
+        .price_container
+            if price
+                p=price
+                    span  руб
+            else
+                p 5 689
+                    span  руб
+        .buy_container
+            a В корзину
+mixin deliveryPlate(img_src,title_txt,subtitle_txt,p1,p2)
+    .delivery_plate
+        .img_container
+            img(src=img_src)
+        .txts_container
+            h2=title_txt
+            h2.text_red=subtitle_txt
+            p=p1
+            p=p2

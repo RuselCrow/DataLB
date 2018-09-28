@@ -1,0 +1,78 @@
+.info-container(){
+    transition: top 0.4s;
+    top:0;
+    &:hover{
+        top:-10px;
+        .round-container{
+            box-shadow: 9px 10px 35px 1px rgba(0, 0, 0, 0.17);
+        }
+    }
+    .round-container{
+        transition: box-shadow 0.4s;
+        display: inline-block;
+        position: relative;
+        width: 317px;
+        height: 210px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 7px 8px 40px 0px rgba(0,0,0,0.11);
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    h3{
+        font-family: "Roboto Bold";
+        font-size: 20px;
+        color: @projectTextColor;
+        margin: 32px 0 15px;
+        
+    }
+    p{
+        font-family: "Roboto Regular";
+        font-size: 16px;
+        color: @projectTextColor;
+        //text-align: justify;
+        margin-top: 0;
+    }
+    .icon-container{
+        box-shadow: 9px 10px 35px 1px rgba(0, 0, 0, 0.17);
+        width: 41px;
+        height: 41px;
+        border-radius: 21px;
+        background-color: #232837;
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        z-index: 4;
+        padding: 0px 0 0 0;
+        img{
+            float: left;
+            margin-left: 1px;
+            position: relative;
+            width: 40px;
+        }
+    }
+}
+
+.servicePlate{
+    position: relative;
+    width: 317px;
+    margin-bottom: 100px;
+    .responsiveMax(693px,{
+        margin-bottom: 80px;
+    });
+    .info-container();
+    .desc-container{
+        display: inline-block;
+    }
+    .from, .to, .cost{
+        display: inline-block;
+    }
+    .cost{
+        font-size: 20px;
+    }
+
+
+
+}
+
+

@@ -1,0 +1,86 @@
+extends ../base.pug
+include ../../components/UI/currLocation.pug
+include ../../components/UI/uiMixins.pug
+block title
+    |  - Блог
+block main
+    .blog
+        .blog_content
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +currentLocation('Новости')
+                        h1 Новости
+            .container.blog_line
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news2.png'),"Обзор выставки садового инструмента","29 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+            .container.blog_line
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news2.png'),"Обзор выставки садового инструмента","29 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+            .container.blog_line
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news2.png'),"Обзор выставки садового инструмента","29 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+            .container.blog_line
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news2.png'),"Обзор выставки садового инструмента","29 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+            .container.blog_line
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news2.png'),"Обзор выставки садового инструмента","29 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+            .container.blog_line
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news2.png'),"Обзор выставки садового инструмента","29 января","information.html")
+                    .col-md-3
+                        +newsPlate(require('../../components/images/news1.png'),"Многофункциональный инструмент ЗУБР серии Мастер","30 января","information.html")
+            .blog_navigation
+                .container
+                    .row
+                        .col-md-3
+                        .col-md-3
+                            .blog_nav_bc
+                                a(href="") Первая
+                                a(href="") Прадыдущая
+                        .col-md-3
+                            .numbers_nav
+                                a(href="") 1
+                                a(href="").active 2
+                                a(href="") 3
+                                a(href="") 4
+                        .col-md-3
+                            .blog_nav_fw
+                                a(href="") Следующая
+                                a(href="") Последняя

@@ -1,0 +1,150 @@
+extends ../base.pug
+include ../../components/UI/currLocation.pug
+include ../../components/UI/uiMixins.pug
+
+block title
+    |  - Категория
+block main
+    .category.greyBG
+        .category_info
+            .container
+                .row
+                    .col-md-3.cat_nav_parent
+                        .left_nav_panel
+                            .categogy_navigation
+                                ul
+                                    li
+                                        a(href="") Виброплиты, вибротрамбовки
+                                    li
+                                        a(href="") Затирочные машины бензиновые
+                                    li
+                                        a(href="") Масло Makita, Зубр и другие для бензопил и электропил
+                                    li
+                                        a(href="") Мотопомпы
+                                    li
+                                        a(href="") Пилы цепные, бензопилы
+                                    li
+                                        a(href="") Садовый бензоинструмент
+                                    li
+                                        a(href="") Швонарезчики
+                            .brend_check
+                                .brend_title.up
+                                    h2 Бренд
+                                .filter_container.visible
+                                    ul
+                                        li
+                                            label.checkbox_container Makita
+                                                input(type="checkbox")
+                                                span.checkmark
+                                        li
+                                            label.checkbox_container Stihl
+                                                input(type="checkbox",checked="checked")
+                                                span.checkmark
+                                        li
+                                            label.checkbox_container Husqvarna
+                                                input(type="checkbox")
+                                                span.checkmark
+                                        li
+                                            label.checkbox_container Emak
+                                                input(type="checkbox")
+                                                span.checkmark
+                                        li
+                                            label.checkbox_container Kioritz Corporation
+                                                input(type="checkbox")
+                                                span.checkmark
+                                        li
+                                            label.checkbox_container Dolmar
+                                                input(type="checkbox")
+                                                span.checkmark
+                            .price_check
+                                .brend_title.up
+                                    h2 Цена
+                                .filter_container.visible
+                                    .inputs_container
+                                        input#price_min(placeholder="от")
+                                        input#price_max(placeholder="до")
+                                    #price_slider
+
+
+                    .col-md-9
+                        +currentLocation('Бензоинструмент')
+
+                        H1 Бензоинструмент
+                        p
+                        | Бензоинструмент представляет собой различные агрегаты, которые помогут справиться с тяжелой физической работой, которая проводится на загородных участках, а так же в домах частного типа, лесах и так далее. В данном разделе вы без труда сможете найти не только непосредственно бензоинструмент, но так же различные аксессуары для бензоинструмента, бензоинструмент садового типа, электростанции бензиновые, генераторы, бензопилы и цепные пилы. Здесь вы сможете заказать и приобрести оборудование высокого качества, которое станет надежным и верным помощником на долгое время. Благодаря широкому ассортименту бензоинструмента, вы сможете подобрать такую модель, которая будет отвечать всем поставленным целям.
+
+        .sorting
+            .container
+                .row
+                    .col-md-3
+                    .col-md-4
+                        .sort_by
+                            p='Сортировать: '
+                                a.active.down_before(href='#') по цене
+                                a.up_before(href='#') по популярности
+                    .col-md-3
+                    .col-md-2
+                        .square_toggler
+                            .square
+                            .square
+                            .square
+                            .square
+                        .linear.active
+                            .rectangle
+                            .rectangle
+                            .rectangle
+        .shop_items
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +product_plate_long(require('../../components/images/chainsaw1.png'),
+                        'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                        'Артикул: БП 25/12М-111',5,true)
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +product_plate_long(require('../../components/images/chainsaw2.png'),
+                        'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                        'Артикул: БП 25/12М-111',0,false)
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +product_plate_long(require('../../components/images/chainsaw3.png'),
+                        'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                        'Артикул: БП 25/12М-111',1,false)
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +product_plate_long(require('../../components/images/chainsaw2.png'),
+                        'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                        'Артикул: БП 25/12М-111',2,false)
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +product_plate_long(require('../../components/images/chainsaw1.png'),
+                        'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                        'Артикул: БП 25/12М-111',3,true)
+
+            .blog_navigation
+                .container
+                    .row
+                        .col-md-3
+                        .col-md-3
+                            .blog_nav_bc
+                                a(href="") Первая
+                                a(href="") Прадыдущая
+                        .col-md-3
+                            .numbers_nav
+                                a(href="") 1
+                                a(href="").active 2
+                                a(href="") 3
+                                a(href="") 4
+                        .col-md-3
+                            .blog_nav_fw
+                                a(href="") Следующая
+                                a(href="") Последняя

@@ -1,0 +1,69 @@
+extends ../base.pug
+include ../../components/UI/currLocation.pug
+include ../../components/UI/uiMixins.pug
+block title
+    |  - Бренд
+block main
+    .brend
+        .brend_info
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +currentLocation('Новости')
+
+                        H1 Новости
+                        .intext_image
+                            img(src=require('../../components/images/brend/makita.jpg'))
+                        p
+                        | Компания Makita была основана в 1915 году господином Масабуро Макита в японском городе Нагоя. В первые годы компания занималась продажей и ремонтом электромоторов и трансформаторов. В 1935г. компания начала экспортировать электромоторы и генераторы в Россию.
+                        | На сегодняшний день ассортимент Makita насчитывает свыше 1,000 наименований инструментов
+                        | Компания Makita является лидером в области разработки строительных инструментов.
+                        | Уже 100 лет компания разрабатывает и производит инструменты для работ с деревом, бетоном и другими строительными и промышленными материалами, а также для садоводства и лесозаготовки.
+                        p
+                        | Корпорация Makita включает в себя 8 производственных предприятий, из которых два расположены в Европе : в Великобритании и Германии .
+                        | Эффективное техническое обеспечение заводов позволяет удовлетворить различные требования потребителей в любых сегментах рынка и постоянно продвигать марку Makita за счет расширения ассортимента продукции.
+                        h2 Залогом успешного роста компании Makita является:
+                        ul
+                            li Постоянная адаптация к меняющимся требованиям рынка;
+                            li Высокий уровень качества продукции и сервиса;
+                            li Совершенствование профессиональных качеств сотрудников, непрерывное повышение их квалификации.
+
+
+        .brend_products
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        h1 Товары бренда
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9.listNav
+            .container.prod_line
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +productPlate(require('../../components/images/product1.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",0,"2 421")
+                    .col-md-3
+                        +productPlate(require('../../components/images/product2.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",1,"2 421")
+                    .col-md-3
+                        +productPlate(require('../../components/images/product3.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",2,"2 421")
+            .container.prod_line
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +productPlate(require('../../components/images/product1.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",3,"2 421")
+                    .col-md-3
+                        +productPlate(require('../../components/images/product2.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",4,"2 421")
+                    .col-md-3
+                        +productPlate(require('../../components/images/product3.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",5,"2 421")
+            .container.prod_line
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +productPlate(require('../../components/images/product1.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",0,"2 421")
+                    .col-md-3
+                        +productPlate(require('../../components/images/product2.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",1,"2 421")
+                    .col-md-3
+                        +productPlate(require('../../components/images/product3.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",2,"2 421")

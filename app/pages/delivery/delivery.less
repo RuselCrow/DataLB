@@ -1,0 +1,59 @@
+@import "../../components/globalVars";
+
+
+.delivery{
+  padding-bottom: 50px;
+  h1{
+    .defaultFont();
+    font-size: 28px;
+  }
+  h2{
+    .defaultFont();
+    font-size: 16px;
+  }
+  p{
+    .defaultFont();
+    font-size: 16px;
+  }
+
+
+  .company_line .col-md-4{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    a{
+      cursor: pointer;
+      display: inline-block;
+      font-size: 16px;
+      text-decoration: underline;
+      margin-right: 35px;
+      margin-top: 15px;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+  }
+  .red_button {
+    background-color: @mainRed;
+    border-radius: 5px;
+    a {
+      color: white;
+      //text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+  .red_button:hover {
+    cursor: pointer;
+  }
+  .actions_button {
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    a {
+      //vertical-align: middle;
+      width: 140px;
+      //height: 40px;
+    }
+  }
+}

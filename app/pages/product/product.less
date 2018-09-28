@@ -1,0 +1,106 @@
+@import "../../components/globalVars";
+
+.personal_info{
+  .sub_title_line{
+    p{
+      display: inline;
+    }
+    margin-bottom: 15px;
+  }
+  .stars{
+    display: inline;
+    margin: 0 10px;
+  }
+  .product_placement{
+    margin-bottom: 40px;
+    .text_red{
+      text-decoration: underline;
+    }
+    .text_red:hover{
+      text-decoration: none;
+    }
+    .product_img,.short_char,.delivery{
+      display: inline-block;
+    }
+
+    .price_text{
+      .old_price_text{
+        margin-left: 20px;
+        p{
+          color: @textGrey;
+          text-decoration: line-through;
+          span{
+            text-decoration: none;
+          }
+        }
+
+      }
+      .new_price_text,.old_price_text{
+        display: inline-block;
+      }
+      p{
+        font-size: 28px;
+        font-weight: bold;
+      }
+      span{
+        font-size: 14px;
+        font-weight: normal;
+      }
+    }
+
+    .product_img{
+      vertical-align: top;
+      border: solid @headerBorderwidth @headerBorderColor;
+      border-radius: 5px;
+      width: 320px;
+      padding: 15px;
+      img{
+        width: 290px;
+      }
+    }
+    .short_char{
+      border-right: solid @headerBorderColor @headerBorderwidth;
+      padding-left: 15px;
+      padding-right: 15px;
+      .buttons_line{
+        .red_button,.text_red{
+          display: inline-block;
+        }
+        .text_red{
+          margin-left: 15px;
+        }
+      }
+      .red_button {
+        text-transform: uppercase;
+        background-color: @mainRed;
+        border-radius: 5px;
+        width: 140px;
+        height: 40px;
+        text-align: center;
+        padding-top: 10px;
+        a {
+          color: white;
+          //text-transform: uppercase;
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+      .red_button:hover {
+        cursor: pointer;
+      }
+    }
+    .delivery {
+      width: 200px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.carousel_nav{
+  margin-top: 20px;
+
+}
+.shop1{
+  padding-bottom: 50px;
+}

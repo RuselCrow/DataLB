@@ -1,0 +1,143 @@
+extends ../base.pug
+include ../../components/UI/currLocation.pug
+include ../../components/UI/uiMixins.pug
+
+block title
+    |  - Корзина
+block main
+    .basket.greyBG
+        .basket_title
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +currentLocation('Корзина')
+                        h1 Корзина
+        .basket_content
+            .baaasket_sorting
+                .container
+                    .row
+                        .col-md-3
+                        .col-md-2
+                            .square_toggler
+                                .square
+                                .square
+                                .square
+                                .square
+                            .linear.active
+                                .rectangle
+                                .rectangle
+                                .rectangle
+                        .col-md-7
+                            .calculating
+                                .color_text
+                                    p Кол-во товаров:
+                                    p.text_red.quantity 3
+                                .color_text
+                                    p На сумму:
+                                    p.text_red.summ 356
+                                    p.text_grey руб
+                                .color_text
+                                    p Скидка:
+                                    p.text_red.sale -100
+                                    p.text_grey руб
+        .products_basket
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +product_plate_long(require('../../components/images/chainsaw1.png'),
+                        'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                        'Артикул: БП 25/12М-111',5,true,58900)
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +product_plate_long(require('../../components/images/chainsaw1.png'),
+                        'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                        'Артикул: БП 25/12М-111',5,true)
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +product_plate_long(require('../../components/images/chainsaw1.png'),
+                        'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                        'Артикул: БП 25/12М-111',5,true)
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        form.promo
+                            .promo_text
+                                label Введите кодовое слово или купон
+                            .promo_text
+                                input(type='text',placeholder='Введите данные')
+                            .promo_text
+                                input(type='submit',value="Активировать").red_button
+            .container
+                .row
+                    .col-md-3
+                    .col-md-2
+                        .square_toggler
+                    .col-md-7
+                        .calculating
+                            .color_text
+                                p Кол-во товаров:
+                                p.text_red.quantity 3
+                            .color_text
+                                p На сумму:
+                                p.text_red.summ 356
+                                p.text_grey руб
+                            .color_text
+                                p Скидка:
+                                p.text_red.sale -100
+                                p.text_grey руб
+        .delivery_info
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        h1 Оформление заказа
+                .delivery_info_container
+                    form.delivery_form
+                        .delivery_method
+                            h1 1. Способ доставки
+                            .form_line
+                                input(type="radio",name="delivery_type", value="Курьер (Доставка курьером)")
+                                label 300.00 руб.
+                            .form_line
+                                input(type="radio",name="delivery_type", value="Транспортная компания")
+                                label 300.00 руб.
+                            .form_line
+                                input(type="radio",name="delivery_type", value="Самовывоз")
+                                label 300.00 руб.
+                        .paiment_method
+                            h1 2. Способ оплаты
+                            .form_line
+                                input(type="radio",name="delivery_type", value="Наличные")
+                            .form_line
+                                input(type="radio",name="delivery_type", value="Наличные")
+                        .total_summ
+                            .color_text
+                                p На сумму:
+                                p.text_red.summ 356
+                        .contact_info
+                            .contact_info_left
+                                label Ваше имя*
+                                input(type='text',name='fname',placeholder='Ваше имя')
+                                label Ваша фамилия*
+                                    input(type='text',name='lname',placeholder='Ваша фамилия')
+                                label Электронная почта*
+                                    input(type='text',name='mail',placeholder='Введите данные')
+                                label Телефон*
+                                    input(type='text',name='phone',placeholder='Введите данные')
+                            .contact_info_rigth
+                                label Адрес*
+                                    input(type='text',name='adress',placeholder='Введите данные')
+                                label Комментарий
+                                    input(type='text',name='description',placeholder='Введите данные')
+                        p *- Поля обязательные для заполнения
+                        submit Оформить заказ
+
+
+

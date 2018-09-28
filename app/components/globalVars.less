@@ -1,0 +1,127 @@
+@headerBgColor: #232837;
+@projectTextColor: #232837;
+@mainTextColor: white;
+@buttonBgColor1: #00cdff;
+@servicesBg: #00cdff;
+@buttonBgColor2: #0046af;
+
+
+
+.defaultFont(){
+  font-family: "MyriadPro","Myriad Pro","Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+}
+
+.textStyle1(){
+  font-family: "Roboto Regular";
+  font-size: 14px;
+  color: @mainTextColor;
+}
+
+.firmTextColor(){
+  color: #232837;
+}
+
+.textStyleH1(){
+  font-family: "Roboto Bold";
+  font-size: 70px;
+  color: @mainTextColor;
+}
+
+.textStyleMainH2(){
+  font-family: "Roboto Bold";
+  font-size: 52px;
+  color: @projectTextColor;
+}
+
+.textStyleH3(){
+  font-family: "Roboto Bold";
+  font-size: 30px;
+  color: @projectTextColor;
+}
+
+.textStyle1(){
+  font-family: "Roboto Regular";
+  font-size: 14px;
+  color: @mainTextColor;
+}
+
+.textStyle2(){
+  font-family: "Roboto Regular";
+  font-size: 20px;
+  color: @mainTextColor;
+}
+
+.textStyle3(){
+  font-family: "Roboto Regular";
+  font-size: 18px;
+  color: @mainTextColor;
+}
+
+.transition(@actions, @time){
+  -webkit-transition: @actions @time;
+  -moz-transition: @actions @time;
+  -ms-transition: @actions @time;
+  -o-transition: @actions @time;
+  transition: @actions @time;
+}
+
+.keyframes(@name,@rules) {
+
+  @-webkit-keyframes @name {
+      @rules();
+  }
+
+  @-moz-keyframes @name {
+      @rules();
+  }
+
+  @-ms-keyframes @name {
+      @rules();
+  }
+
+  @-o-keyframes @name {
+      @rules();
+  }
+
+  @keyframes @name {
+      @rules();
+  }
+}
+
+
+.responsive(@minWidth, @maxWidth, @rules) {
+  @media only screen and (min-width: @minWidth) and (max-width: @maxWidth) {
+    @rules();
+  }
+}
+.responsiveMax(@maxWidth, @rules) {
+  @media only screen and (max-width: @maxWidth) {
+    @rules();
+  }
+}
+.responsiveMin(@minWidth, @rules) {
+  @media only screen and (min-width: @minWidth) {
+    @rules();
+  }
+}
+
+.default-container{
+  .responsiveMin(1280px, {
+    width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+  });
+  .responsive(931px,1279px,{
+    width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+  });
+  .responsiveMax(425px, {
+    width:100%;
+    padding: 0 20px;
+  });
+  .responsive(426px,930px,{
+    width:100%;
+    padding: 0 30px;
+  });
+}

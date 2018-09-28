@@ -1,0 +1,128 @@
+extends ../base.pug
+include ../../components/UI/currLocation.pug
+include ../../components/UI/uiMixins.pug
+
+block title
+    |  - Товар
+block main
+    .personal
+        .personal_info
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +currentLocation('Ручной инструмент')
+                        H1 Набор инструментов STAYER универсальный, 26 предметов, 27710-H26
+                        .sub_title_line
+                            p.text_grey Артикул: БП 25/12М-111
+                            .stars
+                                img(src=require('../../components/images/star-little.png'))
+                                img(src=require('../../components/images/star-little.png'))
+                                img(src=require('../../components/images/star-little.png'))
+                                img(src=require('../../components/images/star-little.png'))
+                                img(src=require('../../components/images/star-hollow.png'))
+                            p.text_red В наличии
+                        .product_placement
+                            .product_img
+                                img(src=require('../../components/images/stayer1.jpg'))
+                            .short_char
+                                h2 Характеристики
+                                p Объем: 0.007956 м3
+                                p Количество предметов: 26 штук.
+                                p Материал: хромованадиевая сталь.
+                                p Тип упаковки: пластиковый бокс
+                                .price_text
+                                    .new_price_text
+                                        p 4 689
+                                            span  руб
+                                    .old_price_text
+                                        p 6 987
+                                            span  руб
+                                .buttons_line
+                                    .red_button
+                                        a В корзину
+                                    a.text_red Купить в один клик
+                            .delivery
+                                h2 Доставка
+                                h2 По Москве
+                                p Самовывоз из нашего магазина Курьером по адресу
+                                a Выберите регион ∨
+                                .price_text
+                                    .new_price_text
+                                        p + 300
+                                            span  руб
+                                a.text_red Пожаловаться на цену
+        .description_info
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        .listNav
+                        .detail_description
+                            p Набор "Berger" - универсальный набор инструментов для ремонта и обслуживания автомобилей. Комплект подойдет для использования как профессионалами в автомастерских, так и водителями в гараже или в дороге. Инструменты выполнены из хромованадиевой стали. Кейс из пластика компактно вмещает в себя 45 предметов набора, обладает ручкой для транспортировки и защелками.
+                            p В наборе:
+                            | - 1. 13 шт. - 1/4" головки торцевые 6-гранные Super Lock: 4, 4.5, 5, 5.5, 6, 7, 8, 9, 10, 11, 12, 13, 14 мм;
+                            | - 2. 6 шт. - 1/4" головки торцевые длинные 6-гранные Super Lock: 8, 10, 11, 12, 13, 14 мм;
+                            | - 3. 1 шт. - 1/4" вороток Т-образный 115 мм;
+                            | - 4. 1 шт. - 1/4" трещотка (ключ трещоточный с быстрым сбросом) 45 зубов;
+                            | - 5. 2 шт. - 1/4" удлинитель: 50, 100 мм;
+                            | - 6. 1 шт. - 1/4" удлинитель гибкий: 150мм;
+                            | - 7. 1 шт. - 1/4" кардан шарнирный;
+                            | - 8. 1 шт. - 1/4" отвертка с присоединительным квадратом;
+                            | - 9. 7 шт. - ключи комбинированные: 7, 8, 10, 11, 12, 13, 14 мм;
+                            | - 10. 1 шт. - 1/4" адаптер для бит;
+                            | - 11. 11 шт. - 1/4" биты:
+                            | - SLOT (шлиц): 4, 5, 6, 6.5;
+                            | - Ph (крест): 0, 1, 2, 2;
+                            | - HEX (шестигранник): 4, 5, 6.
+    .shop_module.greyBG
+        .shop1
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        h1 Товары, которые покупают вместе с этим товаром
+            .container
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +productPlate(require('../../components/images/product1.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",0,"2 421")
+                    .col-md-3
+                        +productPlate(require('../../components/images/product2.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",1,"2 421")
+                    .col-md-3
+                        +productPlate(require('../../components/images/product3.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",2,"2 421")
+            .container.carousel_nav
+                .row
+                    .col-md-3
+                    .col-md-3
+                        img(src=require('../../components/images/balls_carousel.png'))
+                    .col-md-4
+                    .col-md-2
+                        img(src=require('../../components/images/arrows-hollow.png')).arrows_hollow
+
+
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        h1 Возможно вам так же понравится
+            .container
+                .row
+                    .col-md-3
+                    .col-md-3
+                        +productPlate(require('../../components/images/product1.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",0,"2 421")
+
+                    .col-md-3
+                        +productPlate(require('../../components/images/product2.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",1,"2 421")
+                    .col-md-3
+                        +productPlate(require('../../components/images/product3.jpg'),"Электроинструмент","Устройство зарядное AEG,12В,Li-ion,30 мин, LL1230",2,"2 421")
+
+            .container.carousel_nav
+                .row
+                    .col-md-3
+                    .col-md-3
+                        img(src=require('../../components/images/balls_carousel.png'))
+                    .col-md-4
+                    .col-md-2
+                        img(src=require('../../components/images/arrows-hollow.png')).arrows_hollow
+

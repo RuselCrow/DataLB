@@ -1,0 +1,49 @@
+@import "../../components/globalVars";
+.blog_line{
+  margin-bottom: 20px;
+}
+.abra(){
+  a{
+    font-size: 16px;
+    color: @textGrey;
+    text-decoration: underline;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+}
+.blog_navigation{
+  .defaultFont();
+  margin-bottom: 40px;
+  .blog_nav_bc{
+    a:before{
+      content: "<";
+    }
+    a{
+      margin-left: 30px;
+    }
+    .abra();
+  }
+
+  .numbers_nav{
+    .abra();
+    margin-left: 20px;
+    a{
+      text-decoration: none;
+      margin-left: 30px;
+      color: black;
+    }
+    a.active{
+      color: @mainRed;
+    }
+  }
+  .blog_nav_fw{
+    .abra();
+    a:after {
+      content: ">";
+    }
+    a{
+      margin-right: 30px;
+    }
+  }
+}

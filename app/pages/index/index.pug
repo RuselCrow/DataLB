@@ -1,0 +1,239 @@
+extends ../base.pug
+include ../../components/UI/projectPlate.pug
+include ../../components/UI/infoPlates.pug
+
+block title
+    |  - Главная
+block main
+    .main-screen
+        .blicker-big
+        .blicker-small
+        .default-container
+            .m-text-side
+                h1 Интерактивная лаборатория_
+                p Разработчики в области проектирования цифровых продуктов с целью успешного развития вашего бизнеса
+                .main-screen-buttons
+                    .button-container
+                        button.round-button.round-button__hover
+                            p Связаться
+                                span='>'
+                    button.hollow-button.hollow-button__arrow Подробнее
+                        span='>'
+            .m-code-side
+                .dna
+                    .wrapper
+                        .loader
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div
+                            .div.is-mobile
+                            .div.is-mobile
+                            .div.is-mobile
+                            .div.is-mobile
+                            .div.is-mobile
+                            .div.is-mobile
+                            .div.is-mobile
+                            .div.is-mobile
+                            .div.is-mobile
+                            .div.is-mobile
+                            //- .div
+                            //- .div
+                            //- .div
+                            //- .div
+                            //- .div
+    .project-block
+        .project-container
+            .bottom-curve
+                    .curve-maker
+            .project-content
+                .default-container
+                    .m-text-side
+                            h2 Проекты_
+                            p Предлагаем ознакомиться с реализованными проектами
+                    .project-plates
+                        +prjectPlate('Платёжная система','«Mega Pay»',
+                        'Система, способная обрабатывать 1500 транзакций в секунду. Проект осуществляется уже более 8 лет!',
+                        '#',require('../../components/images/project/photo1.png'),'#4a6a93',
+                        require('../../components/images/project/p_icon1.png'),
+                        require('../../components/images/project/iphone x.png'))
+                        /////
+                        +prjectPlate('Криптобанк','«Convert»',
+                        'Автоматический обменник валют. Позволяет легально, быстро и безопасно купить/продать криптовалюту.',
+                        '#',require('../../components/images/project/photo2.png'),'#94c81b',
+                        require('../../components/images/project/p_icon2.png'),
+                        require('../../components/images/project/iphone x.png'))
+                        /////
+                        +prjectPlate('Автомойки','«Акватория»',
+                        'Сеть автомоек самообслуживания с режимом работы 24/7. Прибыль от 7 000 000 р. в год!',
+                        '#',require('../../components/images/project/photo3.png'),'#3d867b',
+                        require('../../components/images/project/p_icon3.png'),
+                        require('../../components/images/project/iphone x.png'))
+
+    .services-block
+        .blicker-big_gr
+        .blicker-small
+        .top-curve
+            .curve-maker
+        #particles.particlesBg
+        .services-content
+            .default-container
+                .m-text-side
+                    h2 Услуги_
+                    p Предлагаем ознакомиться с услугами, которые позволят в полной мере понять вид нашей деятельности
+                .services-container
+                    +servicePlate('Проектирование и прототипирование',
+                    'Осуществление проектирования и прототипирования с учётом проведения презентации.',
+                    require('../../components/images/services/1_(1).svg'))
+                    //- require('../../components/images/services/icon1.png'))
+                    ///
+                    +servicePlate('Дизайн сайтов и их продвижение',
+                    'Осуществление дизайна сайтов и их продвижение с учётом проведения презентации.',
+                    require('../../components/images/services/1_(2).svg'))
+                    //- require('../../components/images/services/icon2.png'))
+                    ///
+                    +servicePlate('Разработка мобильных приложений',
+                    'Осуществление разработки мобильных приложений с учётом проведения презентации.',
+                    require('../../components/images/services/1_(3).svg'))
+                    //- require('../../components/images/services/icon3.png'))
+                    ///
+                    +servicePlate('Разработка сайтов и интернет-магазинов',
+                    'Осуществление разработки сайтов и интернет-магазинов с учётом проведения презентации.',
+                    require('../../components/images/services/1_(4).svg'))
+                    //- require('../../components/images/services/icon4.png'))
+                    ///
+                    +servicePlate('Разработка web-прилож. и API',
+                    'Осуществление разработки web-приложений и API с учётом проведения презентации.',
+                    require('../../components/images/services/1_(5).svg'))
+                    //- require('../../components/images/services/icon5.png'))
+                    ///
+                    +servicePlate('Сопровождение и поддержка',
+                    'Осуществление сопровождения и поддержки с учётом проведения презентации.',
+                    require('../../components/images/services/1_(6).svg'))
+                    //- require('../../components/images/services/icon6.png'))
+
+    .tech-block
+        .tech-round-thing.block-addon__center
+        .default-container
+            .tech-images
+                each val, index in ['1 (1)', '1 (2)', '1 (3)', '1 (4)', '1 (5)', '1 (6)', '1 (7)', '1 (8)']
+                    .img-container(class=([1,2,3].includes(index)?'mobile ':'') + ([0,1,2,3,4].includes(index)?'plansh':''))
+                        img(src=require('../../components/images/logos/'+val+'.svg'))
+    .particles1
+        .particlesBg#particles1
+        .vacancy-block
+            .tech-round-thing__black.block-addon__center.not-mobile
+            .vacancy-content
+                .default-container
+                    .m-text-side
+                        h2 Вакансии_
+                        p Предлагаем ознакомиться с реальными свободными на данный момент местами в нашей компании
+                    .vacancy-container
+                        +vacansyPlate('PHP-разработчик',
+                        '50 000',
+                        require('../../components/images/services/1_(7).svg'))
+                        //- require('../../components/images/services/icon7.png'))
+                        ///
+                        +vacansyPlate('PHP-разработчик',
+                        '40 000',
+                        require('../../components/images/services/1_(7).svg'))
+                        //- require('../../components/images/services/icon7.png'))
+                        ///
+                        +vacansyPlate('PHP-разработчик',
+                        '40 000',
+                        require('../../components/images/services/1_(7).svg'))
+                        //- require('../../components/images/services/icon7.png'))
+                        ///
+                        +vacansyPlate('PHP-разработчик',
+                        '60 000',
+                        require('../../components/images/services/1_(7).svg'))
+                        //- require('../../components/images/services/icon7.png'))
+                        ///
+                        +vacansyPlate('PHP-разработчик',
+                        '70 000',
+                        require('../../components/images/services/1_(7).svg'))
+                        //- require('../../components/images/services/icon7.png'))
+                        ///
+                        +vacansyPlate('PHP-разработчик',
+                        '35 000',
+                        require('../../components/images/services/1_(7).svg'))
+                        //- require('../../components/images/services/icon7.png'))
+
+        .callback
+            .tech-round-thing__reverce__black.block-addon__center.not-mobile
+            .default-container
+                .m-text-side
+                        h2 Обратная связь_
+                        p Предлагаем заполнить форму для максимально быстрой связи с нами
+                form.callback-form(action="" autocomplete="off")
+                    .form-info
+                        .form-name.form-info_element
+                            
+                            input(type='text' name='name' required autocomplete="off")
+                            label(for="name") Ваше имя
+                        .form-phone.form-info_element
+                            
+                            input(type='text' name='phone' required autocomplete="off")
+                            label(for="phone") Номер телефона
+                        .form-mail.form-info_element
+                            
+                            input(type='text' name='mail' required autocomplete="off")
+                            label(for="mail") Адрес электронной почты
+                        .form-about.form-info_element
+                            input(type='text' name='about' required autocomplete="off")
+                            label(for="about") Расскажите немного о своём проекте
+                    .form-controls
+                        button.send-button.round-button.round-button__blue
+                            p Отправить
+                                span='>'
+                        .aprove-check
+                            label.container-ch(for="checkbox") Согласие на обработку персональных данных
+                                input.checkbox(type="checkbox" name="checkbox" required)
+                                span.checkmark
+        
+    footer
+        .footer-top
+            .default-container
+                .links-container
+                    a.phone-link(href="tel:+7843000000")='8 843 000 000'
+                    a.mail-link(href="mailto:mail@datalab.com")='mail@datalab.com'
+        .footer-bottom
+            .tech-round-thing__black.block-addon__center.mobile
+            .default-container
+                .arrows-img
+                    img(src=require('../../components/images/arrows.png'))
+                
+                .copyright
+                    p © 2018 DATALAB. Все права защищены
+                .footer-nav
+                    .soc-icons
+                        a(href='#')
+                            img(src=require('../../components/images/logos/instagram.png'))
+                            img(src=require('../../components/images/scr_preload.jpg'))
+                        a(href='#')
+                            img(src=require('../../components/images/logos/facebook.png'))
+                        a(href='#')
+                            img(src=require('../../components/images/logos/telegram.png'))
+                    .nav-links
+                        a(href='#') Проекты
+                            span
+                        a(href='#') Услуги
+                            span
+                        a(href='#') Вакансии
+                            span
+                
+

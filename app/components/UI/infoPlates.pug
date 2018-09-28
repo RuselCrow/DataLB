@@ -1,0 +1,26 @@
+mixin servicePlate(title,desc,iconUrl)
+    .servicePlate
+        .round-container
+            .title-container
+                h3=title
+            .desc-container
+                p=desc
+        .icon-container
+            img(src=iconUrl)
+
+mixin vacansyPlate(title,desc,iconUrl,full=true)
+    .servicePlate
+        .round-container
+            .title-container
+                h3=title
+            .desc-container
+                p.from='от'
+                p.cost=desc
+                p.to='р./мес.'
+            .day-desc
+                if full==true
+                    p='Полный рабочий день'
+                else
+                    p='неполный рабочий день'
+        .icon-container
+            img(src=iconUrl)

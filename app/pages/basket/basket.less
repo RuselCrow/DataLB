@@ -1,0 +1,87 @@
+@import "../../components/globalVars";
+
+
+
+.color_text {
+  p{
+    .defaultFont;
+    font-size: 14px;
+  }
+  .text_red{
+    font-size: 17px;
+    font-weight: bold;
+  }
+}
+.color_text:not(:last-child) {
+  margin-right: 20px;
+}
+.color_text{
+
+  display: inline-block;
+  p{
+    display: inline-block;
+  }
+}
+
+.calculating{
+  float: right;
+}
+.promo{
+  background-color: white;
+  border-radius: 5px;
+
+  float: right;
+
+  .promo_text:first-child{
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  .promo_text:last-child{
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .promo_text{
+    vertical-align: top;
+    height: 40px;
+    background-color: white;
+    display: inline-block;
+    border: solid @headerBorderwidth #ededed;
+    border-right: none;
+  }
+  label{
+    display: block;
+    height: 40px;
+    //margin: 10px;
+
+  }
+  input[type="text"]{
+    display: block;
+    //border: solid @headerBorderwidth @headerBorderColor;
+    height: 40px;
+    width: 250px;
+    padding-left: 15px;
+    border: none;
+    //border-right: none;
+    //border-radius: 5px;
+  }
+  input[type="submit"]{
+    color: white;
+    display: block;
+    margin: 0;
+    width: 160px;
+    height: 40px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: @mainRed;
+    border: none;
+    border-left: solid @headerBorderwidth #ededed;
+
+  }
+}
+.delivery_info_container{
+  border: solid @headerBorderwidth @headerBorderColor;
+  border-radius: 5px;
+}

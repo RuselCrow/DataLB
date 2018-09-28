@@ -1,0 +1,81 @@
+@import "../../components/globalVars";
+.personal{
+  padding-bottom: 50px;
+  .info_container:first-child{
+    margin-right: 40px;
+  }
+  .text_line:last-child{
+    margin-top: 25px;
+  }
+  .buy_story{
+    h2{
+      font-size: 16px;
+    }
+  }
+  .info_container{
+    margin-bottom: 40px;
+    //display: inline-block;
+    background-color: white;
+    border: solid @headerBorderColor @headerBorderwidth;
+    padding: 30px;
+    h2{
+      font-size: 16px;
+    }
+    .adr{
+      margin-left: 0px;
+      margin-top: 20px;
+    }
+    .text_line{
+      p,a,.red_button{
+        display: inline-block;
+      }
+    }
+    p{
+      color: @textGrey;
+    }
+    a{
+      margin: auto 10px;
+      color: black;
+      text-decoration: underline;
+    }
+    a.text_red{
+      color: @mainRed;
+    }
+    .red_button {
+      background-color: @mainRed;
+      border-radius: 5px;
+      width: 140px;
+      height: 40px;
+      text-align: center;
+      padding-top: 10px;
+      a {
+        color: white;
+        //text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+    .red_button:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.square_toggler:hover{
+  cursor: pointer;
+
+}
+.square_toggler{
+  background-color: @bgGrey;
+  vertical-align: top;
+  margin-top: 10px;
+  margin-right: 25px;
+
+}
+.linear:hover{
+  cursor: pointer;
+}
+.linear{
+  vertical-align: top;
+  margin-top: 18px;
+}

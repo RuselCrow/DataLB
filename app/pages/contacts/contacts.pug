@@ -1,0 +1,109 @@
+extends ../base.pug
+include ../../components/UI/currLocation.pug
+include ../../components/UI/uiMixins.pug
+block title
+    |  - Контакты
+block main
+    .contacts
+        .contacts_info
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +currentLocation('Контакты')
+
+                        H1 Контакты
+                        p
+                        | Наш магазин является официальным дилером торговых марок: Stayer, Kraftool, Зубр, Makita, Bosch, AEG, B&D, Britech, DeWalt, Elitech, Gridna, Marina, OLFA, Raco, Rapid, Speroni, Skil, Stanley, Stiga, Tecnoweld, Telwin, НИЗ, Светозар, Тевтон, Труд Вача, и др.
+        .contacts_detail
+            .container
+                .row
+                    .col-md-3
+                    .col-md-4
+                        .detail_info
+                            .img_container
+                                img(src=require("../../components/images/icons/ovalico4.png"))
+                            .txt_container
+                                p Москва и МО:
+                                    span
+                                        a(href="tel:+74952152720")=" 8(495)215-27-20"
+                                p Россия:
+                                    span
+                                        a(href="tel:+78002000600")=" 8(800)2000 600"
+                                    span=" (Бесплатно)"
+                                p 125599, Москва, Ижорская, д. 6
+                                p Часы работы:
+                                p Пн-Пт: 9:00 — 18:00
+                                p Сб-Вс: выходной
+                    .col-md-1
+                    .col-md-4
+                        .detail_info
+                            .img_container
+                                img(src=require("../../components/images/icons/ovalico2.png"))
+                            .txt_container
+                                p E-mail:
+                                    span
+                                        a(href="mailto:info@instrumentale.ru")=" info@instrumentale.ru"
+                                p ICQ: 603089062
+                                p Telegram:
+                                    span
+                                        a(href="tg://resolve?domain=instrumentale")=" instrumentale"
+                                p Viber:
+                                    span
+                                        a.vb_pc(href="viber://chat?number=+255236")=" 255236"
+                                        a.vb_mb(href="viber://add?number=+255236")=" 255236"
+                                p Skype:
+                                    span
+                                        a(href="skype:instrumentale?chat")=" instrumentale"
+            .container
+                .row
+                    .col-md-3
+                    .col-md-4
+                        .detail_info#clients
+                            .img_container
+                                img(src=require("../../components/images/icons/ovalico3.png"))
+                            .txt_container
+                                h2 Отдел по работе с клиентами:
+                                a(href="tel:+79061485858")="8(906)148-58-58"
+                                br
+                                a(href="mailto:nataly@instrumentale.ru")="nataly@instrumentale.ru"
+                                br
+                                br
+                                h2 Отдел по работе с контрагентами:
+                                a(href="tel:+79175263636")="8(917)526-36-36"
+                                br
+                                a(href="mailto:zeleny@instrumentale.ru")=" zeleny@instrumentale.ru"
+                    .col-md-1
+                    .col-md-4
+                        .detail_info
+                            .img_container
+                                img(src=require("../../components/images/icons/ovalico1.png"))
+                            .txt_container
+                                p ООО «Ваковия»
+                                p ОГРН: 1177746350320
+                                p ИНН: 7713441561
+                                p Юридический адрес:
+                                p 127591, г. Москва, ул. Дубнинская, д. 75А
+                                a(href="#") Запросить счёт
+
+block footer
+    include ../../components/map/map.pug
+
+    .road_desc
+        .container
+            .row
+                .col-md-3
+                .col-md-5.on_auto
+                    h2 Проезд на автомобиле:
+                    p
+                    | Двигаясь по МКАД съехать на Бусиновский проезд в сторону Москвы. Продолжайте движение 810 м до пересечения с ул. Ижорская. Сверните направо и продолжайте движение 600 метров по улице Ижорская. Вы приехали!
+                    p
+                    | Двигаясь по Дмитровскому шоссе из центра сверните на Коровинское шоссе и продолжайте движение 4 км. Поверните налево и двигайтесь по ул. Ижорская 1 км. Вы приехали!
+                .col-md-4
+                    h2 Проезд на метро:
+                    p
+                    | От метро Речной вокзал: Автобусы: 673 до остановки «Бусиново»; 200 и 559 до остановки «Ижорская».
+                    p
+                    | От метро Окружная: Необходимо выйти из метро и пройти 500 метров до остановки "Нижние Лихоборы" на Дмитровскм шоссе. Транспорт: автобус – 656 до остановки «Ижорская»
+
+    include ../../components/footer/footer.pug

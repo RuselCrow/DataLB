@@ -1,0 +1,222 @@
+@import "../globalVars";
+
+header{
+  height: 78px;
+  background-color: @headerBgColor;
+  .header-container {
+    display: block;
+    padding-top: 30px;
+  }
+  .top-logo {
+    margin-right: 30px;
+    float: left;
+  }
+  .lang-switch {
+    
+    display: block;
+    float: left;
+    margin-top: 17px;
+    a{
+      .textStyle1();
+      margin-left: 10px;
+      &.active{
+        text-decoration: underline;
+      }
+      &:not(.active){
+        position: relative;
+        &:hover{
+          span{
+            width: 100%;
+          }
+        }
+      }
+      span{
+        transition: width 0.3s;
+        position: absolute;
+        height: 2px;
+        width: 0;
+        border-bottom: 1px solid white;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+  nav{
+    .textStyle1();
+    float: right;
+    ul{
+      display: flex;
+      list-style: none;
+      li{
+        margin-left: 50px;
+        overflow: hidden;
+        a{
+          .textStyle1();
+          position: relative;
+          padding-bottom: 2px;
+          &:hover{
+            span{
+              width: 100%;
+            }
+          }
+        }
+        span{
+          transition: width 0.3s;
+          position: absolute;
+          height: 2px;
+          width: 0;
+          border-bottom: 1px solid white;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+.responsiveMin(931px,{
+  .toggle-hamburger{
+    display: none;
+  }
+});
+.responsiveMax(930px,{
+  .toggle-hamburger{
+    display: block;
+  }
+});
+
+#side-menu{
+  .responsiveMax(930px,{
+    pointer-events: none;
+    display: block;
+    position: fixed;
+    opacity: 0;
+    transition: opacity 0.5s 0.1s;
+    background-color: #232837;
+    z-index: 5;
+    width: 100%;
+    height: calc(100vh ~"-" 78px);
+    top:78px;
+    left:0;
+    overflow-y: scroll;
+    ul{
+      display: none;
+      margin-top: 50px;
+      display: block;
+      padding: 0;
+      li{
+        margin-left: 30px;
+        
+        a{
+          font-size: 25px;
+
+        }
+      }
+      li:not(:last-child){
+        margin-bottom: 70px;
+      }
+    }
+    &.active{
+      pointer-events: auto;
+      opacity: 1;
+      display: block;
+      position: fixed;
+      ul{
+        display: block;
+      }
+    }
+
+  });
+
+}
+
+/* button starting stylings ------------------------------- */
+.toggle-hamburger {
+  float: right;
+  //background-color: #fff;
+  color: #ccc;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 46px;
+  height: 46px;
+  font-size: 0;
+  text-indent: -9999px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  box-shadow: none;
+  border: none;
+  border-radius: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  /* --- animate to X --- */
+  /* animate to arrow to left */
+  /* animate to arrow to bottom */
+  /* animate to ckeck icon */
+}
+.toggle-hamburger:focus {
+  outline: none;
+}
+.toggle-hamburger span {
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 9px;
+  right: 9px;
+  height: 4px;
+  background: white;
+  border-radius: 6px;
+}
+.toggle-hamburger span::before, .toggle-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  content: "";
+  border-radius: 6px;
+}
+.toggle-hamburger span::before {
+  top: -10px;
+}
+.toggle-hamburger span::after {
+  bottom: -10px;
+}
+// .toggle-hamburger.toggle-hamburger__animx {
+//   background-color: #605c77;
+//   /* when menu open: */
+// }
+.toggle-hamburger.toggle-hamburger__animx span {
+  transition: background 0s 0.3s;
+}
+.toggle-hamburger.toggle-hamburger__animx span::before, .toggle-hamburger.toggle-hamburger__animx span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+.toggle-hamburger.toggle-hamburger__animx span::before {
+  transition-property: top, \transform;
+}
+.toggle-hamburger.toggle-hamburger__animx span::after {
+  transition-property: bottom, \transform;
+}
+.toggle-hamburger.toggle-hamburger__animx.is-active span {
+  background: none;
+}
+.toggle-hamburger.toggle-hamburger__animx.is-active span::before, .toggle-hamburger.toggle-hamburger__animx.is-active span::after {
+  //background-color: #ED1651;
+  transition-delay: 0s, 0.3s;
+}
+.toggle-hamburger.toggle-hamburger__animx.is-active span::before {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.toggle-hamburger.toggle-hamburger__animx.is-active span::after {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+@import "./phones";

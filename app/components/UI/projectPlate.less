@@ -1,0 +1,123 @@
+@import "../globalVars";
+
+.projectPlate{
+    margin-bottom: 100px;
+    height: 684px;
+    position: relative;
+    
+    .roundContainer{
+        position: absolute;
+        transition: margin-top 0.5s, box-shadow 0.5s;
+        &:hover{
+            margin-top: -10px;
+            box-shadow: 4px 4px 35px 3px rgba(0, 0, 0, 0.2);
+        }
+        width: 100%;
+        //height: 600px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 2px 2px 40px 2px rgba(0, 0, 0, 0.1);
+        //position: relative;
+        overflow: hidden;
+        .phoneBlock{
+            transition: top 0.5s;
+            position: absolute;
+            top: 40px;
+            right: 55px;
+            .phoneContent{
+                position: relative;
+                .phoneBg{
+                    transition: box-shadow 0.5s;
+                    border-radius: 27px;
+                    width: 221px;
+                    height: 443px;
+                    box-shadow: 4px 6px 40px 3px rgba(0, 0, 0, 0.2);
+                }
+                .phoneImg {
+                    position: absolute;
+                    top: -5px;
+                    left: -4px;
+                    img {
+                        
+                    }
+                }
+                .phoneIcon {
+                    position: absolute;
+                    top: 180px;
+                    left: 75px;
+                    img {
+    
+                    }
+                }
+            }
+            &:hover{
+                top:30px;
+                .phoneContent{
+                    .phoneBg{
+                        box-shadow: 6px 9px 40px 5px rgba(0, 0, 0, 0.25)
+                    }
+                }
+            }
+        }
+        .projImg {
+            img {
+                width: 100%;
+                height: 432px;
+            }
+        }
+        .projBottom{
+            margin-left: 60px;
+            margin-bottom: 50px;
+            .proj-text{
+                .responsiveMax(659px,{
+                    br{
+                        display: block;
+                    }
+                });
+                .responsiveMin(660px,{
+                    br{
+                        display: none;
+                    }
+                });
+                h3 {
+                    margin-top: 50px;
+                    margin-bottom: 15px;
+                    .textStyleH3();
+                }
+                p {
+                    .textStyle3();
+                    color: @projectTextColor;
+                }
+            }
+            .proj-button{
+                button {
+                    background: white;
+                    border: 1px solid @projectTextColor;
+                    border-radius: 25px;
+                    //border: 0px solid #232837;
+                    .transition(all, 0.5s);
+                    .textStyle3();
+                    color:@projectTextColor;
+                    //background-color: rgba(0, 0, 0,0);
+                    height: 48px;
+                    width: 205px;
+                    padding-left: 55px;
+                    text-align: left;
+                    span {
+                        .transition(all, 0.5s);
+                        //float: right;
+                        margin-left: 10px;
+                        font-family: monospace;
+                        font-size: 20px;
+                        margin-top: -1px;
+                    }
+                    &:hover{
+                        span {
+                        margin-left: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

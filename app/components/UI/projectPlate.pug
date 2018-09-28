@@ -1,0 +1,27 @@
+mixin phone(phoneImg,bgColor,iconUrl)
+    .phoneBlock
+        .phoneContent
+            .phoneBg(style='background-color:'+bgColor)
+            .phoneImg
+                img(src=phoneImg)
+            .phoneIcon
+                img(src=iconUrl)
+
+mixin prjectPlate(title1,title2,desc,link,imgUrl,phoneBg,iconUrl,phoneUrl)
+    .projectPlate
+        .roundContainer
+            +phone(phoneUrl,phoneBg,iconUrl)
+            .projImg
+                img(src=imgUrl)
+            .projBottom
+                .proj-text
+                    //-<h3>title1 <br>title2</h3>
+                    h3=title1
+                        br
+                        | #{title2}
+                    p=desc
+                .proj-button
+                    button(href=link)='Подробнее'
+                        span='>'
+            
+            

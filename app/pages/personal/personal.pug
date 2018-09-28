@@ -1,0 +1,104 @@
+extends ../base.pug
+include ../../components/UI/currLocation.pug
+include ../../components/UI/uiMixins.pug
+
+block title
+    |  - Личный кабинет
+block main
+    .personal.greyBG
+        .personal_info
+            .container
+                .row
+                    .col-md-3
+                    .col-md-9
+                        +currentLocation('Личный кабинет')
+
+                        H1 Личный кабинет
+            .container
+                .row
+                    .col-md-3
+                    .col-md-5
+                        .info_container
+                            .text_line
+                                h2 Ваши данные
+                            .text_line
+                                p Имя:
+                                a(href="") Медведев Василий
+                            .text_line
+                                p Пол:
+                                a(href="") Мужской
+                            .text_line
+                                p Эл. почта:
+                                a(href="") example@mail.ru
+                                p.text_red (не подтвержден)
+                            .text_line
+                                p Телефон:
+                                a(href="") +7(123) 698-98-98
+                            .text_line
+                                .red_button
+                                    a(href="") Сохранить
+                                a.text_red Изменить пароль
+                    .col-md-4
+                        .info_container
+                            .text_line
+                                h2 Адрес доставки
+                            .text_line
+                                a.adr Москва, Ижорская, д.6
+                            .text_line
+                                .red_button
+                                    a(href="") Сохранить
+                                a.text_red Удалить адрес
+
+            .buy_story
+                .container
+                    .row
+                        .col-md-3
+                        .col-md-3
+                            H2 История покупок
+                        .col-md-4
+                        .col-lg-2
+                            .square_toggler
+                                .square
+                                .square
+                                .square
+                                .square
+                            .linear.active
+                                .rectangle
+                                .rectangle
+                                .rectangle
+            .shop_items
+                .container
+                    .row
+                        .col-md-3
+                        .col-md-9
+                            +product_plate_long(require('../../components/images/chainsaw1.png'),
+                            'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                            'Артикул: БП 25/12М-111',5,true)
+                .container
+                    .row
+                        .col-md-3
+                        .col-md-9
+                            +product_plate_long(require('../../components/images/chainsaw2.png'),
+                            'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                            'Артикул: БП 25/12М-111',0,false)
+                .container
+                    .row
+                        .col-md-3
+                        .col-md-9
+                            +product_plate_long(require('../../components/images/chainsaw3.png'),
+                            'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                            'Артикул: БП 25/12М-111',1,false)
+                .container
+                    .row
+                        .col-md-3
+                        .col-md-9
+                            +product_plate_long(require('../../components/images/chainsaw2.png'),
+                            'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                            'Артикул: БП 25/12М-111',2,false)
+                .container
+                    .row
+                        .col-md-3
+                        .col-md-9
+                            +product_plate_long(require('../../components/images/chainsaw1.png'),
+                            'Бензопила ELITECH БП 25/12М,25см3,0.9кВт',
+                            'Артикул: БП 25/12М-111',3,true)
