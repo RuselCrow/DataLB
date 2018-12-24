@@ -9,7 +9,43 @@ html body{
   background-color: white;
   font-family: "Roboto Regular";
 }
+.modal-dialog{
+  margin-top: calc(40vh ~"-" 170px);
+  .modal-header{
+    border-bottom: none;
+  }
+  h4{
+    font-size: 15px;
+    font-family: "Roboto Regular";
+  }
+  .modal-game{
+    font-family: "Roboto Bold";
+    margin: 0;
+  }
+  input{
+    width: 100%;
+    border: none;
+    background-color: #f0f1f1;
+    height: 39px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+
+  }
+  input::placeholder{
+    color: #808080;
+    margin-left: 10px;
+  }
+  #submit{
+    display: block;
+    background-color: @buttonColor;
+    font-family: "Roboto Regular";
+    color: white;
+    font-size: 20px;
+    border-radius: 20px;
+  }
+}
 header{
+  height: 60px;
   background-color: @headerBgColor;
   .container{
     display: flex;
@@ -28,10 +64,11 @@ header{
 
 .black-overlay{
   position: absolute;
-  width: 100%;
-  height: 178vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: @overlayColor;
-  top: 54px;
 }
 .arenda-block__top-text{
   position: relative;
@@ -75,7 +112,7 @@ header{
     background-color: @priceColor;
     padding: 3px 5px;
     border-radius: 15px;
-    margin: 15px 10px;
+    margin: 10px 10px;
     p{
       font-size: @blockPriceS;
       font-family: "Roboto Bold";
@@ -111,8 +148,9 @@ header{
 }
 
 .main-content{
-  padding-bottom: 20px;
-  padding-top: 20px;
+  position: relative;
+  padding-bottom: 1px;
+  padding-top: 1px;
   background: url("../../components/images/index/photo.jpg") center center fixed;
   button{
     color: white;
@@ -125,4 +163,90 @@ header{
       margin-left: 40px;
     }
   }
+}
+
+.aprove-check{
+  text-align: center;
+  //margin-left: 245px;
+  //padding-top: 13px;
+  a{
+    color: black;
+    text-decoration: underline;
+  }
+
+  .container-ch {
+    width: auto;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    //font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container-ch input {
+    top:0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    z-index: 3;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: @buttonColor;
+      float: left;
+      height: 20px;
+      width: 20px;
+      border-radius: 10px;
+
+      //background-color: white;
+      border: none;
+  }
+  input.checkbox{
+
+  }
+  
+  
+  /* When the checkbox is checked, add a blue background */
+  .container-ch input:checked ~ .checkmark {
+      background-color: @buttonColor;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container-ch input:checked ~ .checkmark:after {
+      display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container-ch .checkmark:after {
+      left: 6px;
+      top: 1px;
+      width: 9px;
+      height: 11px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+  }
+
 }

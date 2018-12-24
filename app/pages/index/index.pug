@@ -7,17 +7,21 @@ html
     <!-- Yandex.Metrika counter -->
         <script type="text/javascript" >(function (d, w, c) {(w[c] = w[c] || []).push(function() {try {w.yaCounter50530423 = new Ya.Metrika2({id:50530423,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});} catch(e) { }});var n = d.getElementsByTagName("script")[0],s = d.createElement("script"),f = function () { n.parentNode.insertBefore(s, n); };s.type = "text/javascript";s.async = true;s.src = "https://mc.yandex.ru/metrika/tag.js";if (w.opera == "[object Opera]") {d.addEventListener("DOMContentLoaded", f, false);} else { f(); }})(document, window, "yandex_metrika_callbacks2");
         </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/50530423" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script type="text/javascript" src="js/index.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- /Yandex.Metrika counter -->
     <html lang="ru">
     <!--<![endif]-->
     head
-    meta(charset='utf-8')
-    meta(name='viewport',content='initial-scale=1.0, width=device-width')
-    link(rel="shortcut icon" href="#")
-    title Аренда Казань
+        meta(charset='utf-8')
+        meta(name='viewport',content='initial-scale=1.0, width=device-width')
+        link(rel="shortcut icon" href="#")
+        title Аренда Казань
     body
         
+
         header
             .container
                 .ball
@@ -26,6 +30,39 @@ html
                     h1 Время футбола в казани! 
                 .ball
                     img(src=require("../../components/images/index/ball.png"), alt="")
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal-name">"Ватан"</h4>
+                    <h4 class="modal-game">ФУТБОЛ</h3>
+                    <h4 class="modal-title" id="modal-time">19:00-21:00</h4>
+                    <h4 class="modal-title">Вид оплаты: банковская карта</h4>
+                    <h4 class="modal-title">Для подвеждения участия в матче и получения платежной информации заполните пожалуйста анкету ниже</h4>
+                </div>
+                <div class="modal-body">
+                    <form action="send.php" method="post">
+                        input#name(type="name", name="name", placeholder="Имя", required="")
+                        input#phone(type="number", name="phone", placeholder="Телефон")
+                        input#email(type="email", name="email", placeholder="Почта", required="")
+                        .aprove-check
+                            label.container-ch(for="checkbox")="Я согласен с "
+                                span
+                                    a(href="soglasie.html" target="_blank")="условиями сервиса"
+                                input.checkbox(type="checkbox" name="checkbox" required)
+                                span.checkmark
+                        input#submit(type="submit", value="Подтвердить")
+                    </form>
+                </div>
+                </div>
+
+            </div>
+        </div>
+
         .main-content
             .black-overlay
             .arenda-block
@@ -36,7 +73,7 @@ html
                         p="150 руб" 
                 .arenda-block__info
                     p.info="Осталось 3 места!"
-                    button Сегодня в 20:00
+                    button#button1(data-toggle="modal" data-target="#myModal")="Сегодня в 20:00"
                         span=">"
             .arenda-block
                 .white-overlay
@@ -45,8 +82,8 @@ html
                     .price
                         p="100 руб" 
                 .arenda-block__info
-                    p.info="Осталось 7 места!"
-                    button Завтра в 19:00
+                    p.info="Осталось 7 мест!"
+                    button#button2(data-toggle="modal" data-target="#myModal")="Завтра в 19:00"
                         span=">"
             .arenda-block
                 .white-overlay
@@ -56,7 +93,7 @@ html
                         p="100 руб" 
                 .arenda-block__info
                     p.info="Осталось 1 места!"
-                    button Сегодня в 18:30
+                    button#button3(data-toggle="modal" data-target="#myModal")="Сегодня в 18:30"
                         span=">"
 
             .info-content
