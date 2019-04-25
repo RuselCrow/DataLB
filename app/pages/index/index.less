@@ -191,13 +191,32 @@ html body{
 		.man{
 			position: absolute;
 			top: 88px;
-			right: -3px;
+			right: 15px;
+			.arm {
+				position: absolute;
+				&.shoulder {
+					top: 51px;
+					right: 0px;
+					z-index: -1;
+				}
+				&.pointer {
+					top: 1px;
+					right: -20px;
+					animation: exposure-5-arm-poiner 5s linear 0s infinite;
+					transform-origin: bottom;
+				}
+			}
 		}
 		.board{
 			right: 0px;
 			top: 0;
 			z-index: -3;
 			position: absolute;
+			.circle-pointer {
+				r: 1.91464;
+				visibility:hidden;
+				animation: exposure-2-circle-pointer 5s linear 0s infinite;
+			}
 			.graphic-lines {
 				d: path('M 14.1301 72.5476 L 25.6109 63.7163 L 37.0916 51.3524 L 48.5724 54.885 L 60.0531 41.6379');
 			}
@@ -220,15 +239,17 @@ html body{
 				bottom: 23px;
 				z-index: -2;
 			}
-			.left-foot {
-				animation: spin 5s linear 0s infinite;
-				transform-origin: right;
+			#left-foot {
+				&.active {
+					animation: spin 2s linear 0s infinite;
+					transform-origin: right;
+				}
 			}
 			.right-foot {
 				left: 31px;
     			bottom: 5px;
 			}
-			.man-3 {
+			.man__body {
 				z-index: 10;
 			}
 		}
@@ -243,6 +264,22 @@ html body{
 			top: 0px;
 			right: 0;
 			z-index: -3;
+			.arm {
+				position: absolute;
+				&.shoulder {
+					top: 72px;
+					left: 49px;
+					z-index: -1;
+					animation: exposure-4-arm-shoulder 5s linear 0s infinite;
+					transform-origin: right;
+				}
+				&.pointer {
+					top: 84px;
+					left: -7px;
+					animation: exposure-4-arm-poiner 5s linear 0s infinite;
+					transform-origin: center;
+				}
+			}
 		}
 		.board{
 			right: 0px;
@@ -267,63 +304,31 @@ html body{
 		transform: translate(0,10%);
 	}
 }
-// @keyframes column-1 {
-// 	0% {
-// 		d: path('M 15.5637 71.3027 V 62.7831 L 22.6288 64.861 V 73.3807 L 15.5637 71.3027 Z');
-// 	}
-
-// 	50% {
-// 		d: path('M 15.5637 71.3027 V 40.7831 L 22.6288 42.861 V 73.3807 L 15.5637 71.3027 Z');
-// 	}
-// }
-
-// @keyframes column-2 {
-// 	0% {
-// 		d: path('M 33.2264 75.7183 V 39.8215 L 40.2915 41.8995 V 77.7963 L 33.2264 75.7183 Z');
-// 	}
-
-// 	50% {
-// 		d: path('M 33.2264 75.7183 V 69.8215 L 40.2915 71.8995 V 77.7963 L 33.2264 75.7183 Z');
-// 	}
-// }
-// @keyframes column-3 {
-// 	0% {
-// 		d: path('M 50.889 81.0172 V 65.4325 L 57.9541 67.5105 V 83.0952 L 50.889 81.0172 Z');
-// 	}
-
-// 	50% {
-// 		d: path('M 50.889 81.0172 V 35.4325 L 57.9541 37.5105 V 83.0952 L 50.889 81.0172 Z');
-// 	}
-// }
-// @keyframes column-4 {
-// 	0% {
-// 		d: path('M 68.5518 86.316 V 38.0553 L 75.6168 40.1333 V 88.3939 L 68.5518 86.316 Z');
-// 	}
-
-// 	50% {
-// 		d: path('M 68.5518 86.316 V 68.0553 L 75.6168 70.1333 V 88.3939 L 68.5518 86.316 Z');
-// 	}
-// }
-// @keyframes column-5 {
-// 	0% {
-// 		d: path('M 86.2145 91.6148 V 55.718 L 93.2796 57.796 V 93.6928 L 86.2145 91.6148 Z');
-// 	}
-
-// 	50% {
-// 		d: path('M 86.2145 91.6148 V 30.718 L 93.2796 32.796 V 93.6928 L 86.2145 91.6148 Z');
-// 	}
-// }
 .position {
 	position: relative;
-	// .graphic-point {
-	// 	position: absolute;
-	// 	width: 3.53px;
-	// 	height: 3.53px;
-	// 	background: #E5175C;
-	// 	border-radius: 20px;
-	// }
 }
 @keyframes spin {
     0% {transform:rotate(0deg);}
     50% {transform:rotate(5deg);}
+}
+
+@keyframes exposure-4-arm-shoulder {
+    0% {transform:rotate(0deg);}
+    50% {transform:rotate(15deg);}
+}
+
+@keyframes exposure-4-arm-poiner {
+    0% {transform:rotate(0deg);}
+    50% {transform:rotate(-15deg);}
+}
+
+@keyframes exposure-5-arm-poiner {
+    0% {transform:rotate(0deg);}
+    50% {transform:rotate(-15deg);}
+}
+
+@keyframes exposure-2-circle-pointer {
+	0% {r: 1.91464;visibility:visible;opacity: 1;}
+    10% {r: 5.91464;visibility:hidden;opacity: 0;}
+    100% {visibility:hidden;}
 }
