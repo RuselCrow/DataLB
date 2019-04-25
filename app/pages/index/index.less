@@ -8,6 +8,7 @@
 html body{
   	background-color: #F4F5F9;
 	font-family: 'Montserrat', sans-serif;
+	user-select: none;
 	p{
 		margin: 0;
 		color: #000000;
@@ -27,7 +28,7 @@ html body{
 			margin-top: 80px;
 		}
 		.language{
-			p{
+			label{
 				display: inline-block;
 				margin-top: 82px;
 				width: 18px;
@@ -37,16 +38,21 @@ html body{
 				font-size: 12px;
 				line-height: normal;
 				cursor: pointer;
+				color: #CBCBCC;
+			}
+			input{
+				display: none;
+			}
+			input:checked + label {
+				color: #8C8C8C;
 			}
 			.rus{
 				margin-left: 30px;
-				left: 205px;
-				color: #CBCBCC;
+				// color: #CBCBCC;
 			}
 			.eng{
 				margin-left: 15px;
-				left: 238px;
-				color: #8C8C8C;
+				// color: #8C8C8C;
 			}
 		}
 	}
@@ -61,9 +67,11 @@ html body{
 			font-size: 16px;
 			line-height: normal;
 			cursor: pointer;
+			transition: color 0.25s;
 		}
 		p:hover{
-			color: #333333;
+			color: #808080;
+			transition: color 0.25s;
 		}
 	}
 	.callback{
@@ -86,7 +94,10 @@ html body{
 			font-size: 13px;
 			line-height: normal;
 			color: #543DCC;
-			border-bottom: 1px dotted #543DCC;
+			border-bottom: 1px dashed #543DCC;
+		}
+		.order:hover{
+			border-bottom: none;
 		}
 	}
 }
