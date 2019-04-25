@@ -217,6 +217,19 @@ html body{
 				visibility:hidden;
 				animation: exposure-2-circle-pointer 5s linear 0s infinite;
 			}
+			.graphic-1 {
+				position: absolute;
+				top: 43px;
+				left: 84px;
+				.move-graphic();
+			}
+			
+			.graphic-2 {
+				position: absolute;
+				top: 89px;
+				left: 80px;
+				.move-graphic();
+			}
 			.graphic-lines {
 				d: path('M 14.1301 72.5476 L 25.6109 63.7163 L 37.0916 51.3524 L 48.5724 54.885 L 60.0531 41.6379');
 			}
@@ -331,4 +344,24 @@ html body{
 	0% {r: 1.91464;visibility:visible;opacity: 1;}
     10% {r: 5.91464;visibility:hidden;opacity: 0;}
     100% {visibility:hidden;}
+}
+
+@keyframes exposure-2-graphic {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+}
+
+.move-graphic() {
+	.exposure-2-graphic__1 {
+		animation: exposure-2-graphic 6s linear 0s infinite;
+		transform-origin: center;
+	}
+	.exposure-2-graphic__2 {
+		animation: exposure-2-graphic 7s linear 0s infinite;
+		transform-origin: center;
+	}
+	.exposure-2-graphic__3 {
+		animation: exposure-2-graphic 8s linear 0s infinite;
+		transform-origin: center;
+	}
 }
