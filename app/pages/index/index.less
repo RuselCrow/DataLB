@@ -156,11 +156,30 @@ html body{
 			position: absolute;
 			top: 27px;
 			right: 57px;
+			animation-name: fly-man;
+			animation-duration: 8s;
+			animation-iteration-count: infinite;
+    		transition: top 1s;
 		}
 		.board{
 			right: 0px;
 			z-index: -3;
 			position: absolute;
+			#column-1 {
+				.animateRect(column-1, 8s, 'M 15.5637 71.3027 V 62.7831 L 22.6288 64.861 V 73.3807 L 15.5637 71.3027 Z', ease);
+			}
+			#column-2 {
+				.animateRect(column-2, 5s, 'M 33.2264 75.7183 V 39.8215 L 40.2915 41.8995 V 77.7963 L 33.2264 75.7183 Z', ease-in-out);
+			}
+			#column-3 {
+				.animateRect(column-3, 10s, 'M 50.889 81.0172 V 65.4325 L 57.9541 67.5105 V 83.0952 L 50.889 81.0172 Z', ease-out);
+			}
+			#column-4 {
+				.animateRect(column-4, 13s, 'M 68.5518 86.316 V 38.0553 L 75.6168 40.1333 V 88.3939 L 68.5518 86.316 Z', ease-in);
+			}
+			#column-5 {
+				.animateRect(column-5, 7s, 'M 86.2145 91.6148 V 55.718 L 93.2796 57.796 V 93.6928 L 86.2145 91.6148 Z', linear);
+			}
 			
 		}
 	}
@@ -179,6 +198,12 @@ html body{
 			top: 0;
 			z-index: -3;
 			position: absolute;
+			.graphic-lines {
+				d: path('M 14.1301 72.5476 L 25.6109 63.7163 L 37.0916 51.3524 L 48.5724 54.885 L 60.0531 41.6379');
+			}
+			.graphic-point-1 {
+				d: path('M 14.1302 74.7555 C 15.1056 74.7555 15.8964 73.767 15.8964 72.5477 C 15.8964 71.3283 15.1056 70.3398 14.1302 70.3398 C 13.1547 70.3398 12.3639 71.3283 12.3639 72.5477 C 12.3639 73.767 13.1547 74.7555 14.1302 74.7555Z');
+			}
 		}
 	}
 	.exposure-3{
@@ -190,6 +215,22 @@ html body{
 			position: absolute;
 			top: 0;
 			right: 0;
+			.foot {
+				position: absolute;
+				bottom: 23px;
+				z-index: -2;
+			}
+			.left-foot {
+				animation: spin 5s linear 0s infinite;
+				transform-origin: right;
+			}
+			.right-foot {
+				left: 31px;
+    			bottom: 5px;
+			}
+			.man-3 {
+				z-index: 10;
+			}
 		}
 	}
 	.exposure-4{
@@ -210,4 +251,79 @@ html body{
 		}
 	}
 
+}
+.keyframes(column-1, 'M 15.5637 71.3027 V 62.7831 L 22.6288 64.861 V 73.3807 L 15.5637 71.3027 Z', 'M 15.5637 71.3027 V 40.7831 L 22.6288 42.861 V 73.3807 L 15.5637 71.3027 Z');
+.keyframes(column-2, 'M 33.2264 75.7183 V 39.8215 L 40.2915 41.8995 V 77.7963 L 33.2264 75.7183 Z', 'M 33.2264 75.7183 V 69.8215 L 40.2915 71.8995 V 77.7963 L 33.2264 75.7183 Z');
+.keyframes(column-3, 'M 50.889 81.0172 V 65.4325 L 57.9541 67.5105 V 83.0952 L 50.889 81.0172 Z', 'M 50.889 81.0172 V 35.4325 L 57.9541 37.5105 V 83.0952 L 50.889 81.0172 Z');
+.keyframes(column-4, 'M 68.5518 86.316 V 38.0553 L 75.6168 40.1333 V 88.3939 L 68.5518 86.316 Z', 'M 68.5518 86.316 V 68.0553 L 75.6168 70.1333 V 88.3939 L 68.5518 86.316 Z');
+.keyframes(column-5, 'M 86.2145 91.6148 V 55.718 L 93.2796 57.796 V 93.6928 L 86.2145 91.6148 Z', 'M 86.2145 91.6148 V 30.718 L 93.2796 32.796 V 93.6928 L 86.2145 91.6148 Z');
+
+@keyframes fly-man {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	49% {
+		transform: translate(0,10%);
+	}
+}
+// @keyframes column-1 {
+// 	0% {
+// 		d: path('M 15.5637 71.3027 V 62.7831 L 22.6288 64.861 V 73.3807 L 15.5637 71.3027 Z');
+// 	}
+
+// 	50% {
+// 		d: path('M 15.5637 71.3027 V 40.7831 L 22.6288 42.861 V 73.3807 L 15.5637 71.3027 Z');
+// 	}
+// }
+
+// @keyframes column-2 {
+// 	0% {
+// 		d: path('M 33.2264 75.7183 V 39.8215 L 40.2915 41.8995 V 77.7963 L 33.2264 75.7183 Z');
+// 	}
+
+// 	50% {
+// 		d: path('M 33.2264 75.7183 V 69.8215 L 40.2915 71.8995 V 77.7963 L 33.2264 75.7183 Z');
+// 	}
+// }
+// @keyframes column-3 {
+// 	0% {
+// 		d: path('M 50.889 81.0172 V 65.4325 L 57.9541 67.5105 V 83.0952 L 50.889 81.0172 Z');
+// 	}
+
+// 	50% {
+// 		d: path('M 50.889 81.0172 V 35.4325 L 57.9541 37.5105 V 83.0952 L 50.889 81.0172 Z');
+// 	}
+// }
+// @keyframes column-4 {
+// 	0% {
+// 		d: path('M 68.5518 86.316 V 38.0553 L 75.6168 40.1333 V 88.3939 L 68.5518 86.316 Z');
+// 	}
+
+// 	50% {
+// 		d: path('M 68.5518 86.316 V 68.0553 L 75.6168 70.1333 V 88.3939 L 68.5518 86.316 Z');
+// 	}
+// }
+// @keyframes column-5 {
+// 	0% {
+// 		d: path('M 86.2145 91.6148 V 55.718 L 93.2796 57.796 V 93.6928 L 86.2145 91.6148 Z');
+// 	}
+
+// 	50% {
+// 		d: path('M 86.2145 91.6148 V 30.718 L 93.2796 32.796 V 93.6928 L 86.2145 91.6148 Z');
+// 	}
+// }
+.position {
+	position: relative;
+	// .graphic-point {
+	// 	position: absolute;
+	// 	width: 3.53px;
+	// 	height: 3.53px;
+	// 	background: #E5175C;
+	// 	border-radius: 20px;
+	// }
+}
+@keyframes spin {
+    0% {transform:rotate(0deg);}
+    50% {transform:rotate(5deg);}
 }
