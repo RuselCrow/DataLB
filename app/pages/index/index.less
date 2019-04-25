@@ -253,10 +253,8 @@ html body{
 				z-index: -2;
 			}
 			#left-foot {
-				&.active {
-					animation: spin 2s linear 0s infinite;
-					transform-origin: right;
-				}
+				animation: exposure-3-foot 12s linear 0s infinite;
+				transform-origin: right;
 			}
 			.right-foot {
 				left: 31px;
@@ -320,9 +318,11 @@ html body{
 .position {
 	position: relative;
 }
-@keyframes spin {
-    0% {transform:rotate(0deg);}
-    50% {transform:rotate(5deg);}
+@keyframes exposure-3-foot {
+    50% {transform:rotate(0deg);}
+	55% {transform:rotate(5deg);}
+	60% {transform:rotate(0deg);}
+    75% {transform:rotate(5deg);}
 }
 
 @keyframes exposure-4-arm-shoulder {
