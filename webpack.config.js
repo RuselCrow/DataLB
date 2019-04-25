@@ -12,7 +12,7 @@ const uglifyJS = require('./webpack/js.uglify');
 const images = require('./webpack/images');
 const fonts = require('./webpack/fonts');
 //const createPage = require('./webpack/createPage');
-const pages=['index','basket','brend','category','contacts','information','personal','product','delivery','blog'];
+const pages=['index'];
 
 const PATHS = {
     source: path.join(__dirname, 'app'),
