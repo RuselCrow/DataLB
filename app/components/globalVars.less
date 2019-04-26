@@ -44,3 +44,24 @@
     animation-iteration-count: infinite;
     transition-timing-function: @transition;
 }
+
+.keyframes-graphic(@name, @degLast) {
+  @keyframes @name {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(@degLast);}
+  }
+}
+.animateGraphic(@nameAnimation, @time1, @time2, @time3) {
+  .exposure-2-graphic__1 {
+		animation: @nameAnimation @time1 linear 0s infinite;
+		transform-origin: center;
+	}
+	.exposure-2-graphic__2 {
+		animation: @nameAnimation @time2 linear 0s infinite;
+		transform-origin: center;
+	}
+	.exposure-2-graphic__3 {
+		animation: @nameAnimation @time3 linear 0s infinite;
+		transform-origin: center;
+	}
+}
