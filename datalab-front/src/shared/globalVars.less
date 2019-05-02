@@ -50,6 +50,18 @@
     0% {transform:rotate(0deg);}
     100% {transform:rotate(@degLast);}
   }
+  @-webkit-keyframes @name {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(@degLast);}
+  }
+  @-moz-keyframes @name {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(@degLast);}
+  }  
+  @-ms-keyframes @name {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(@degLast);}
+  }
 }
 .animateGraphic(@nameAnimation, @time1, @time2, @time3) {
   .exposure-2-graphic__1 {
